@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jpncodig.pages.dev/sitemap.xml
