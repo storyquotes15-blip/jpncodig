@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>JPNCOD</title>
+<meta name="theme-color" content="#000000" />
+<link id="faviconLink" rel="icon" href="" />
+<style>
+:root{
+  --bg:#05080c;--card:#05080c;--text:#f5f5f5;--muted:#a8a8a8;--line:#262626;
+  --soft:#11161d;--accent:#0095f6;--danger:#ff3040;--side:245px;--bottom:64px;
+}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}button,input{font:inherit}a{color:inherit}.app{min-height:100vh}.topbar{height:54px;display:none;align-items:center;justify-content:space-between;padding:0 14px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(5,8,12,.96);backdrop-filter:blur(10px);z-index:30}.brand-logo{height:34px;max-width:150px;object-fit:contain}.brand-text{font-family:cursive;font-size:27px;font-weight:700;letter-spacing:-.5px}.sidebar{position:fixed;left:0;top:0;bottom:0;width:var(--side);border-right:1px solid var(--line);background:var(--bg);padding:26px 14px;z-index:40}.side-brand{height:48px;display:flex;align-items:center;margin:0 0 26px 10px}.side-brand img{height:38px;max-width:170px;object-fit:contain}.side-brand span{font-family:cursive;font-size:30px;font-weight:700}.navbtn{width:100%;height:48px;border:0;background:transparent;color:var(--text);border-radius:12px;display:flex;align-items:center;gap:15px;padding:0 12px;font-size:16px;cursor:pointer;text-align:left}.navbtn:hover{background:var(--soft)}.navbtn b{font-size:23px;width:24px;text-align:center}.main{margin-left:var(--side);min-height:100vh;display:flex;justify-content:center}.page{width:100%;max-width:975px;padding:36px 20px 90px}.profile{display:grid;grid-template-columns:180px minmax(0,1fr);gap:34px;align-items:center;max-width:900px;margin:0 auto 34px}.avatar{width:150px;height:150px;border-radius:50%;background:#fff;padding:0;display:grid;place-items:center;overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover}.avatar-fallback{font-size:48px;font-weight:800;color:#111}.profile-top{display:flex;align-items:center;gap:18px;margin-bottom:8px}.profile h1{font-size:21px;font-weight:700;margin:0}.menu-dot{font-size:24px;line-height:1}.display-name{font-weight:800;margin:0 0 14px}.stats{display:flex;gap:24px;margin-bottom:14px;flex-wrap:wrap}.stats div{white-space:nowrap}.stats span{font-weight:800}.bio{line-height:1.32;white-space:pre-line}.profile-actions{display:flex;gap:8px;margin-top:16px}.pill{border:1px solid var(--line);background:#efefef;color:#111;padding:8px 16px;border-radius:8px;font-weight:700;cursor:pointer}.pill.dark{background:var(--soft);color:var(--text)}.tabs{height:52px;border-top:1px solid var(--line);display:flex;justify-content:center;gap:70px;color:var(--muted);font-size:12px;font-weight:800;letter-spacing:.8px}.tab{display:flex;align-items:center;gap:7px;border-top:1px solid transparent;margin-top:-1px;cursor:pointer}.tab.active{border-top-color:var(--text);color:var(--text)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}.tile{position:relative;aspect-ratio:1/1;background:#111;overflow:hidden;cursor:pointer}.tile img,.tile video{width:100%;height:100%;object-fit:cover;display:block;transition:.25s transform}.tile:hover img{transform:scale(1.04)}.tile:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.45),transparent 55%);opacity:.8}.tile .code{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.62);color:#fff;font-weight:800;font-size:12px;padding:5px 7px;border-radius:9px;z-index:2}.tile .open{position:absolute;right:8px;bottom:8px;border:0;background:rgba(255,255,255,.92);color:#111;border-radius:9px;padding:6px 8px;font-weight:900;font-size:11px;z-index:2}.tile .multi{position:absolute;right:8px;top:8px;color:white;text-shadow:0 1px 4px #000;z-index:2}.empty{border:1px dashed var(--line);border-radius:16px;text-align:center;padding:40px 16px;color:var(--muted);background:#070b10;grid-column:1/-1}.bottomnav{display:none;position:fixed;bottom:0;left:0;right:0;height:var(--bottom);background:rgba(5,8,12,.98);border-top:1px solid var(--line);z-index:50;align-items:center;justify-content:space-around;padding-bottom:env(safe-area-inset-bottom)}.bottomnav button{border:0;background:transparent;color:var(--text);font-size:24px;padding:8px 14px}.drawer{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;z-index:80}.drawer.show{display:block}.searchbox{position:absolute;left:260px;top:16px;width:360px;background:#10151c;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 10px 35px rgba(0,0,0,.45)}.searchbox h3{margin:0 0 12px}.field{display:flex;gap:8px}.field input{flex:1;height:42px;border:1px solid var(--line);background:#05080c;color:var(--text);border-radius:10px;padding:0 12px;text-transform:uppercase}.field button{border:0;background:var(--accent);color:white;border-radius:10px;padding:0 14px;font-weight:900}.hint{font-size:13px;color:var(--muted);margin-top:10px}.postpage{max-width:520px;margin:0 auto}.post{border:1px solid var(--line);background:var(--card);border-radius:4px;overflow:hidden}.post-head{height:56px;display:flex;align-items:center;padding:0 12px;gap:10px;border-bottom:1px solid var(--line)}.mini-avatar{width:34px;height:34px;border-radius:50%;background:#fff;overflow:hidden}.mini-avatar img{width:100%;height:100%;object-fit:cover}.post-media{position:relative;background:#000;min-height:360px;display:grid;place-items:center}.post-media img{width:100%;max-height:72vh;object-fit:contain;background:#000}.arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border:0;border-radius:50%;background:rgba(255,255,255,.85);color:#111;font-size:22px;cursor:pointer}.arrow.left{left:10px}.arrow.right{right:10px}.counter{position:absolute;right:12px;top:12px;background:rgba(0,0,0,.65);color:white;border-radius:20px;padding:5px 10px;font-size:13px}.actions{height:46px;display:flex;align-items:center;justify-content:space-between;padding:0 12px}.icons{display:flex;gap:15px}.ico{font-size:24px;line-height:1}.caption{padding:0 12px 12px;line-height:1.4}.caption b{margin-right:5px}.comment{border-top:1px solid var(--line);padding:12px;color:var(--muted)}.adbox{border-top:1px solid var(--line);padding:12px;background:var(--card)}.ad-title{font-size:12px;color:var(--muted);margin:0 0 8px;text-transform:uppercase;letter-spacing:.5px}.ad-list{display:grid;gap:10px}.ad-item{display:block;border-radius:12px;overflow:hidden;background:#111;border:1px solid var(--line);text-decoration:none}.ad-item img{width:100%;display:block;max-height:210px;object-fit:cover}.ad-caption{padding:8px 10px;font-size:13px;color:var(--text);font-weight:700}.ad-empty{font-size:13px;color:var(--muted)}.video-btn{display:inline-flex;align-items:center;gap:8px;margin-top:8px;border:0;background:#fff;color:#111;border-radius:10px;padding:10px 13px;font-weight:900;text-decoration:none}.loader{width:38px;height:38px;border:4px solid #333;border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);background:#fff;color:#111;padding:10px 14px;border-radius:999px;display:none;z-index:100;font-size:14px;font-weight:700}.modalVideo{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;z-index:90;align-items:center;justify-content:center;padding:16px}.modalVideo.show{display:flex}.videoCard{width:min(920px,100%);background:#111;border-radius:14px;overflow:hidden}.videoTop{display:flex;justify-content:space-between;align-items:center;color:#fff;padding:10px 14px}.close{border:0;background:#333;color:#fff;border-radius:8px;padding:8px 12px}.embedWrap{position:relative;width:100%;aspect-ratio:16/9;background:#000}.embedWrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.hidden{display:none!important}
+@media(max-width:760px){.sidebar{display:none}.topbar{display:flex}.main{margin-left:0}.page{padding:18px 0 calc(var(--bottom) + 20px)}.profile{grid-template-columns:96px minmax(0,1fr);gap:15px;padding:0 15px;margin-bottom:16px;align-items:center}.avatar{width:86px;height:86px}.avatar-fallback{font-size:30px}.profile-top{gap:10px;margin-bottom:5px}.profile h1{font-size:19px}.display-name{font-size:14px;margin-bottom:8px}.stats{font-size:14px;gap:12px;margin-bottom:8px}.bio{font-size:14px}.profile-actions{margin-top:10px}.pill{padding:7px 10px;font-size:13px}.tabs{gap:42px;height:46px}.grid{gap:2px}.tile .code{font-size:10px;left:5px;bottom:5px}.tile .open{display:none}.bottomnav{display:flex}.searchbox{left:10px;right:10px;top:auto;bottom:calc(var(--bottom) + 12px);width:auto}.postpage{max-width:100%}.post{border-left:0;border-right:0;border-radius:0}.post-media{min-height:420px}.post-media img{max-height:70vh}.arrow{width:34px;height:34px}.drawer{background:rgba(0,0,0,.35)}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="side-brand" id="sideBrand"></div>
+    <button class="navbtn" onclick="goHome()"><b>⌂</b>Home</button>
+    <button class="navbtn" onclick="openSearch()"><b>⌕</b>Search</button>
+    <button class="navbtn" onclick="openSearch()"><b>▣</b>Explore CODE</button>
+    <button class="navbtn" onclick="toast('Video dibuka dari tombol di postingan')"><b>▷</b>Video</button>
+    <button class="navbtn" onclick="goHome()"><b>◉</b>Profile</button>
+  </aside>
+  <header class="topbar"><div id="topBrand"></div><button class="pill dark" onclick="openSearch()">Cari CODE</button></header>
+  <main class="main"><section class="page" id="page"></section></main>
+  <nav class="bottomnav"><button onclick="goHome()">⌂</button><button onclick="openSearch()">⌕</button><button onclick="toast('Upload lewat Telegram Bot')">＋</button><button onclick="openSearch()">▷</button><button onclick="goHome()">◉</button></nav>
+</div>
+<div class="drawer" id="drawer" onclick="closeSearch(event)"><div class="searchbox" onclick="event.stopPropagation()"><h3>Cari CODE</h3><form class="field" onsubmit="submitSearch(event)"><input id="codeInput" placeholder="MIDV-123" autocomplete="off" /><button>Cari</button></form><div class="hint">Masukkan CODE, nanti langsung buka postingan IG style dan ambil gambar dari slider sumber.</div></div></div>
+<div class="modalVideo" id="videoModal"><div class="videoCard"><div class="videoTop"><b id="videoTitle">Video</b><button class="close" onclick="closeVideo()">Tutup</button></div><div class="embedWrap" id="embedWrap"></div></div></div>
+<div class="toast" id="toast"></div>
+<script src="feed.js"></script>
+<script>
+/* =====================
+   EDIT PROFIL DI SINI
+   ===================== */
+const PROFILE={
+  siteName:'JPNCOD',
+  username:'jpncod',
+  displayName:'JPNCOD REELS',
+  avatar:'https://blogger.googleusercontent.com/img/a/AVvXsEi_3g9FUjElHMNbmA340GcHEcVVwNTX4XV5Vo26IUD_0tNXp_JiFpyeeUwhyxGdByPOTiV4YA0GTiG8wxumEkpVR1OU5YfA6qKHO0sTEs0zhhsFy2DKkrIN8YfL_ziA2DdmsAKjnwTOy4rA0QFMdOHqoKEI5CKGelroxcMFIK3WZAI-B1zYsmf41tSvZA=w640-h640',
+  logo:'https://blogger.googleusercontent.com/img/a/AVvXsEjwv7AQYdg3Ih5o6tkyg-P3WiDmQA-T5PbmWf-ql9Bft2TGQg2rExNyZGF8Eg6zCS2klYotfiRsJmovJlxnXID_BICykgydJQBXz8wcBUPpH3yG4-HgmXx0IwzNDssZmy8BxKRWT6-1V4-LXC1iO77FLEckcX941gZsLb1lpnUriCe_7SEWjXZ8alWBUQ=w640-h164',
+  favicon:'https://blogger.googleusercontent.com/img/a/AVvXsEi_3g9FUjElHMNbmA340GcHEcVVwNTX4XV5Vo26IUD_0tNXp_JiFpyeeUwhyxGdByPOTiV4YA0GTiG8wxumEkpVR1OU5YfA6qKHO0sTEs0zhhsFy2DKkrIN8YfL_ziA2DdmsAKjnwTOy4rA0QFMdOHqoKEI5CKGelroxcMFIK3WZAI-B1zYsmf41tSvZA=w640-h640',
+  posts:'4,206',
+  followers:'9.3M',
+  following:'101',
+  category:'Movie',
+  bio:['•Best drama review','•Don\'t forget follow','•Enjoy the review'],
+  apiBase:'https://wandering-leaf-845a.fadlydats1594.workers.dev',
+  // IKLAN GAMBAR DI BAWAH POSTINGAN / HASIL PENCARIAN
+  // Ganti image dan link sesuai iklan kamu. Bisa tambah banyak.
+  ads:[
+    {
+      image:'https://blogger.googleusercontent.com/img/a/AVvXsEjjNYTkmo6XbXNYzLHqnV_SzCAOEzmJFOTGxYldOdQXwHW6HB2iP_giLEB8yjZxgiM2dBjP6q-gUTs9yph64wXvXwilh25DDk6q-XxaB25BDtjL_-qHSnbRNalddM2o_JiqqUL64Uy_qUFhaQgaPpim8UdAdxtCDaudjCEUEXb0a6_ARNSogEW7q5nmPQ=w640-h164',
+      link:'https://jpncod.pages.dev/',
+      caption:'SLOT IKLAN MASIH TERSEDIA - KLIK DI SINI'
+    }
+  ]
+};
+
+const DEMO_FEED = (window.DEMO_FEED || window.FEED_DATA || []).map(item => {
+  if (Array.isArray(item)) {
+    const [code, cover] = item;
+    return { code, caption: code, cover };
+  }
+  return {
+    code: item.code,
+    caption: item.caption || item.code,
+    cover: item.cover || item.image || item.thumbnail || ''
+  };
+});
+let currentPost=null,currentIndex=0;
+function setMeta(){document.title=PROFILE.siteName||'JPNCOD';const fav=document.getElementById('faviconLink');fav.href=PROFILE.favicon||PROFILE.avatar||'';renderBrand('sideBrand');renderBrand('topBrand')}
+function renderBrand(id){const el=document.getElementById(id);if(PROFILE.logo){el.innerHTML=`<img class="brand-logo" src="${PROFILE.logo}" alt="${PROFILE.siteName}">`}else{el.innerHTML=`<span class="brand-text">${PROFILE.siteName}</span>`}}
+function api(path){return (PROFILE.apiBase||'/api')+path}
+function normalizeCode(s){return (s||'').trim().toUpperCase().replace(/\s+/g,'-')}
+function avatarHtml(cls=''){return PROFILE.avatar?`<img src="${PROFILE.avatar}" alt="${PROFILE.username}">`:`<div class="avatar-fallback">${(PROFILE.siteName||'J')[0]}</div>`}
+function route(){const path=location.pathname;const m=path.match(/^\/p\/([^/]+)/); if(m)return renderPost(decodeURIComponent(m[1])); renderHome()}
+function shuffleArray(array){
+ const arr=[...array];
+ for(let i=arr.length-1;i>0;i--){
+   const j=Math.floor(Math.random()*(i+1));
+   [arr[i],arr[j]]=[arr[j],arr[i]];
+ }
+ return arr;
+}
+async function renderHome(){
+ const page=document.getElementById('page');
+ page.innerHTML=`<div class="profile"><div class="avatar">${avatarHtml()}</div><div><div class="profile-top"><h1>${PROFILE.username}</h1><span class="menu-dot">⋮</span></div><div class="display-name">${PROFILE.displayName}</div><div class="stats"><div><span id="postCount">${PROFILE.posts}</span> posts</div><div><span>${PROFILE.followers}</span> followers</div><div><span>${PROFILE.following}</span> following</div></div><div class="bio">${PROFILE.category}<br>${(PROFILE.bio||[]).join('<br>')}</div><div class="profile-actions"><button class="pill" onclick="openSearch()">Cari CODE</button><button class="pill" onclick="toast('Share profile')">Share profile</button></div></div></div><div class="tabs"><div class="tab active">▦ POSTS</div><div class="tab">◎ CODE</div><div class="tab">▷ REELS</div></div><div class="grid" id="grid"><div class="empty">Memuat feed Telegram...</div></div>`;
+ let posts = shuffleArray(DEMO_FEED);
+ if(!PROFILE.postsAuto===false){} // aman untuk edit sendiri
+ const grid=document.getElementById('grid');grid.innerHTML='';
+ posts.forEach(p=>{const code=normalizeCode(p.code);const el=document.createElement('div');el.className='tile';const cover=p.cover||p.image||p.thumbnail||(p.gallery&&p.gallery[0])||(p.images&&p.images[0])||'';el.innerHTML=`<img loading="lazy" src="${cover}" alt="${code}"><span class="multi">▣</span><span class="code">${code}</span><button class="open">BUKA</button>`;el.onclick=()=>openPost(code);grid.appendChild(el)})
+}
+function openPost(code){history.pushState(null,'','/p/'+encodeURIComponent(normalizeCode(code)));route()}
+function goHome(){history.pushState(null,'','/');route()}
+function openSearch(){document.getElementById('drawer').classList.add('show');setTimeout(()=>document.getElementById('codeInput').focus(),50)}
+function closeSearch(e){document.getElementById('drawer').classList.remove('show')}
+function submitSearch(e){e.preventDefault();const code=normalizeCode(document.getElementById('codeInput').value);if(!code)return;document.getElementById('drawer').classList.remove('show');openPost(code)}
+async function renderPost(code){
+ const page=document.getElementById('page');
+ page.innerHTML=`<div class="postpage"><article class="post"><div class="post-head"><div class="mini-avatar">${avatarHtml()}</div><div><b>${PROFILE.username}</b><br><small style="color:var(--muted)">${normalizeCode(code)}</small></div></div><div class="post-media"><div class="loader"></div></div><div class="actions"><div class="icons"><span class="ico">♡</span><span class="ico">💬</span><span class="ico">↗</span></div><span class="ico">🔖</span></div><div class="caption"><b>${PROFILE.username}</b> Memuat postingan...</div><div class="comment">Komentar...</div></article></div>`;
+ let data=null;
+ try{
+   const r=await fetch(api('/search?code='+encodeURIComponent(normalizeCode(code))));
+   if(r.ok)data=normalizeMovieData(await r.json(), code);
+ }catch(e){}
+ if(!data||!data.images||!data.images.length){
+   try{
+     const r2=await fetch(api('/api/detail/'+encodeURIComponent(normalizeCode(code))));
+     if(r2.ok)data=normalizeMovieData(await r2.json(), code);
+   }catch(e){}
+ }
+ if(!data||!data.images||!data.images.length){data={code:normalizeCode(code),title:'Gambar tidak ditemukan '+normalizeCode(code),studio:'',images:[],embed:api('/embed?code='+encodeURIComponent(normalizeCode(code)))}}
+ currentPost=data;currentIndex=0;drawPost()
+}
+
+function normalizeMovieData(json, code){
+ const m=json&&json.movie?json.movie:json;
+ if(!m)return null;
+ const images=m.images||m.gallery||(m.thumbnail?[m.thumbnail]:[]);
+ return {
+   code:normalizeCode(m.code||code),
+   title:m.title||'',
+   studio:m.studio||'',
+   actress:m.actress||'',
+   thumbnail:m.thumbnail||images[0]||'',
+   images:Array.isArray(images)?images.filter(Boolean):[],
+   embed:m.embed||api('/embed?code='+encodeURIComponent(normalizeCode(m.code||code)))
+ };
+}
+function renderAds(){
+ if(!PROFILE.ads||!PROFILE.ads.length)return '';
+ const items=PROFILE.ads.filter(a=>a&&a.image).map(a=>`<a class="ad-item" href="${a.link||'#'}" target="_blank" rel="noopener"><img src="${a.image}" alt="Ads"><div class="ad-caption">${a.caption||'Iklan'}</div></a>`).join('');
+ if(!items)return '';
+ return `<div class="adbox"><div class="ad-title">Sponsored</div><div class="ad-list">${items}</div></div>`;
+}
+function drawPost(){const data=currentPost;const media=document.querySelector('.post-media');if(!data.images||!data.images.length){media.innerHTML=`<div style="padding:40px;text-align:center;color:var(--muted)">Gambar tidak ditemukan untuk ${data.code}</div>`}else{const img=data.images[currentIndex];media.innerHTML=`<img src="${img}" alt="${data.code}"><div class="counter">${currentIndex+1}/${data.images.length}</div><button class="arrow left" onclick="prevImg(event)">‹</button><button class="arrow right" onclick="nextImg(event)">›</button>`}document.querySelector('.caption').innerHTML=`<b>${PROFILE.username}</b> <b>CODE: ${data.code}</b><br>${data.title||''}<br><small style="color:var(--muted)">${data.studio||''}${data.actress?' • '+data.actress:''}</small><br><button class="video-btn" onclick="openVideo('${data.code}')">▷ TONTON VIDEO</button>`;document.querySelector('.comment').innerHTML=`Lihat komentar • tombol video mengikuti CODE <b>${data.code}</b>`; const oldAd=document.querySelector('.adbox'); if(oldAd)oldAd.remove(); document.querySelector('.post').insertAdjacentHTML('beforeend', renderAds())}
+function nextImg(e){e&&e.stopPropagation();if(!currentPost)return;if(!currentPost.images.length)return;currentIndex=(currentIndex+1)%currentPost.images.length;drawPost()}
+function prevImg(e){e&&e.stopPropagation();if(!currentPost)return;if(!currentPost.images.length)return;currentIndex=(currentIndex-1+currentPost.images.length)%currentPost.images.length;drawPost()}
+async function openVideo(code){const modal=document.getElementById('videoModal');const wrap=document.getElementById('embedWrap');document.getElementById('videoTitle').textContent='Video '+normalizeCode(code);wrap.innerHTML='<div class="loader" style="margin:60px auto"></div>';modal.classList.add('show');let src='';try{const r=await fetch(api('/embed?code='+encodeURIComponent(normalizeCode(code))));if(r.ok){const j=await r.json();src=j.embed||j.url||''}}catch(e){} if(!src)src='about:blank';wrap.innerHTML=`<iframe allowfullscreen src="${src}"></iframe>`}
+function closeVideo(){document.getElementById('videoModal').classList.remove('show');document.getElementById('embedWrap').innerHTML=''}
+function toast(t){const el=document.getElementById('toast');el.textContent=t;el.style.display='block';clearTimeout(window.__toast);window.__toast=setTimeout(()=>el.style.display='none',1800)}
+window.addEventListener('popstate',route);document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')nextImg(); if(e.key==='ArrowLeft')prevImg(); if(e.key==='Escape'){closeVideo();document.getElementById('drawer').classList.remove('show')}});setMeta();route();
+</script>
+<script src="https://defrostgauntlet.com/49/33/66/4933668cb38e0a502288b00eea9311be.js"></script>
+</body>
+</html>
