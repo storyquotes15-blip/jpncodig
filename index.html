@@ -223,10 +223,34 @@ function renderAds(){
  if(!items)return '';
  return `<div class="adbox"><div class="ad-title"></div><div class="ad-list">${items}</div></div>`;
 }
-function drawPost(){const data=currentPost;updateSeo(data.code,data);const media=document.querySelector('.post-media');if(!data.images||!data.images.length){media.innerHTML=`<div style="padding:40px;text-align:center;color:var(--muted)">Gambar tidak ditemukan untuk ${data.code}</div>`}else{const img=data.images[currentIndex];media.innerHTML=`<img src="${img}" alt="${data.code}"><div class="counter">${currentIndex+1}/${data.images.length}</div><button class="arrow left" onclick="prevImg(event)">‹</button><button class="arrow right" onclick="nextImg(event)">›</button>`}document.querySelector('.caption').innerHTML=`<b>${PROFILE.username}</b> <b>CODE: ${data.code}</b><br>${data.title||''}<br><small style="color:var(--muted)">${data.studio||''}${data.actress?' • '+data.actress:''}</small><br><button class="video-btn" onclick="openVideo('${data.code}')">▷ TONTON VIDEO</button>`;document.querySelector('.comment').innerHTML=`Lihat komentar • tombol video mengikuti CODE <b>${data.code}</b>`; const oldAd=document.querySelector('.adbox'); if(oldAd)oldAd.remove(); document.querySelector('.post').insertAdjacentHTML('beforeend', renderAds())}
+function drawPost(){const data=currentPost;updateSeo(data.code,data);const media=document.querySelector('.post-media');if(!data.images||!data.images.length){media.innerHTML=`<div style="padding:40px;text-align:center;color:var(--muted)">Gambar tidak ditemukan untuk ${data.code}</div>`}else{const img=data.images[currentIndex];media.innerHTML=`<img src="${img}" alt="${data.code}"><div class="counter">${currentIndex+1}/${data.images.length}</div><button class="arrow left" onclick="prevImg(event)">‹</button><button class="arrow right" onclick="nextImg(event)">›</button>`}document.querySelector('.caption').innerHTML=`<b>${PROFILE.username}</b> <b>CODE: ${data.code}</b><br>${data.title||''}<br><small style="color:var(--muted)">${data.studio||''}${data.actress?' • '+data.actress:''}</small><br><div class="video-buttons">
+  <button class="video-btn" onclick="openVideo('${data.code}')">
+    ▷ TONTON VIDEO
+  </button>
+
+  <button class="video-btn uncensored-btn" onclick="openUncensored('${data.code}')">
+    🔥 UNCENSORED
+  </button>
+</div>`;document.querySelector('.comment').innerHTML=`Lihat komentar • tombol video mengikuti CODE <b>${data.code}</b>`; const oldAd=document.querySelector('.adbox'); if(oldAd)oldAd.remove(); document.querySelector('.post').insertAdjacentHTML('beforeend', renderAds())}
 function nextImg(e){e&&e.stopPropagation();if(!currentPost)return;if(!currentPost.images.length)return;currentIndex=(currentIndex+1)%currentPost.images.length;drawPost()}
 function prevImg(e){e&&e.stopPropagation();if(!currentPost)return;if(!currentPost.images.length)return;currentIndex=(currentIndex-1+currentPost.images.length)%currentPost.images.length;drawPost()}
 async function openVideo(code){const modal=document.getElementById('videoModal');const wrap=document.getElementById('embedWrap');document.getElementById('videoTitle').textContent='Video '+normalizeCode(code);wrap.innerHTML='<div class="loader" style="margin:60px auto"></div>';modal.classList.add('show');let src='';try{const r=await fetch(api('/embed?code='+encodeURIComponent(normalizeCode(code))));if(r.ok){const j=await r.json();src=j.embed||j.url||''}}catch(e){} if(!src)src='about:blank';wrap.innerHTML=`<iframe allowfullscreen src="${src}"></iframe>`}
+function openUncensored(code){
+  const clean = normalizeCode(code);
+  const modal = document.getElementById('videoModal');
+  const wrap = document.getElementById('embedWrap');
+
+  document.getElementById('videoTitle').textContent = 'Uncensored ' + clean;
+
+  wrap.innerHTML = `
+    <iframe
+      allowfullscreen
+      src="https://upload18.org/play/index/${clean}-uncensored-leak">
+    </iframe>
+  `;
+
+  modal.classList.add('show');
+}
 function closeVideo(){document.getElementById('videoModal').classList.remove('show');document.getElementById('embedWrap').innerHTML=''}
 function toast(t){const el=document.getElementById('toast');el.textContent=t;el.style.display='block';clearTimeout(window.__toast);window.__toast=setTimeout(()=>el.style.display='none',1800)}
 window.addEventListener('popstate',route);document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')nextImg(); if(e.key==='ArrowLeft')prevImg(); if(e.key==='Escape'){closeVideo();document.getElementById('drawer').classList.remove('show')}});setMeta();route();
