@@ -148,7 +148,33 @@ function shuffleArray(array){
 }
 async function renderHome(){
  const page=document.getElementById('page');
- page.innerHTML=`<div class="profile"><div class="avatar">${avatarHtml()}</div><div><div class="profile-top"><h1>${PROFILE.username}</h1><span class="menu-dot">⋮</span></div><div class="display-name">${PROFILE.displayName}</div><div class="stats"><div><span id="postCount">${PROFILE.posts}</span> posts</div><div><span>${PROFILE.followers}</span> followers</div><div><span>${PROFILE.following}</span> following</div></div><div class="bio">${PROFILE.category}<br>${(PROFILE.bio||[]).join('<br>')}</div><div class="profile-actions"><button class="pill" onclick="openSearch()">Cari CODE</button><button class="pill" onclick="toast('Share profile')">Share profile</button></div></div></div><div class="tabs"><div class="tab active">▦ POSTS</div><div class="tab">◎ CODE</div><div class="tab">▷ REELS</div></div><div class="grid" id="grid"><div class="empty">Memuat feed Telegram...</div></div>`;
+ page.innerHTML = `<div class="profile">
+  <div class="avatar">${avatarHtml()}</div>
+  <div>
+    <div class="profile-top">
+      <h1>${PROFILE.username}</h1>
+      <span class="menu-dot">⋮</span>
+    </div>
+    <div class="display-name">${PROFILE.displayName}</div>
+    <div class="stats">
+      <div><span id="postCount">${PROFILE.posts}</span> posts</div>
+      <div><span>${PROFILE.followers}</span> followers</div>
+      <div><span>${PROFILE.following}</span> following</div>
+    </div>
+    <div class="bio">${PROFILE.category}<br>${(PROFILE.bio||[]).join('<br>')}</div>
+    <div class="profile-actions">
+      <button class="pill" onclick="openSearch()">Cari CODE</button>
+      <a class="pill" href="https://t.me/jpnvids1no1stylegruop" target="_blank" rel="noopener noreferrer" style="display: inline-block; text-decoration: none;">Telegram</a>
+     <a class="pill" href="https://web.facebook.com/filmdramajapan/" target="_blank" rel="noopener noreferrer" style="display: inline-block; text-decoration: none;">Facebook</a>
+    </div>
+  </div>
+</div>
+<div class="tabs">
+  <div class="tab active">▦ POSTS</div>
+  <div class="tab">◎ CODE</div>
+  <div class="tab">▷ REELS</div>
+</div>
+<div class="grid" id="grid"><div class="empty">Memuat feed Telegram...</div></div>`;
  let posts = shuffleArray(DEMO_FEED);
  if(!PROFILE.postsAuto===false){} // aman untuk edit sendiri
  const grid=document.getElementById('grid');grid.innerHTML='';
